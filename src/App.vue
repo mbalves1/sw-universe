@@ -1,32 +1,40 @@
+
+
+
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-app-bar app class="navbar" dark elevation="0">
+
+      <router-link to="/">
+        <v-toolbar-title class="navbar-title">Star Wars Universe</v-toolbar-title>
+      </router-link>
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
+<script>
+  export default {
+    data: () => ({ drawer: null }),
+  }
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300&display=swap');
+* {
+  font-family: 'Fira Code', monospace;
 }
 
-#nav {
-  padding: 30px;
+a {
+  text-decoration: none;
+}
 
-  a {
+.navbar {
+  &-title {
+    color: white;
     font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
 }
 </style>

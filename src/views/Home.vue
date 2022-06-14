@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <Content></Content> -->
+    <component :is="current"></component>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Content from '../components/Content.vue'
+import Movie from '../components/Movie.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Content,
+    Movie
+  },
+  computed: {
+    ...mapState(['current'])
   }
 }
 </script>
